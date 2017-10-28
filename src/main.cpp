@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 
         file.loadFile();
         file.buildSymbolTable();
-        // file.displaySymbolTable();
+        file.displaySymbolTable();
         file.assemble();
         file.displayData();
         file.execute();
