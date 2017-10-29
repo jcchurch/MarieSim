@@ -98,7 +98,7 @@ This code does the same thing, but subtracts from input whatever value is stored
 
 ### Understanding `load` and `store`
 
-`load` will load a value at a location into AC. `store` will move whatever is in AC to a memory location. This sample program will take a number, store it into location `first`, take a second number and store it into location `section`, take a third number and immediately output that number, then load the number in second and output, then load the number in first and then output it.
+`load` will load a value at a location into AC. `store` will move whatever is in AC to a memory location. This sample program will take a number, store it into location `first`, take a second number and store it into location `second`, take a third number and immediately output that number, then load the number in second and output, then load the number in first and then output it.
 
     input
     store first
