@@ -64,7 +64,7 @@ All programs in MarieSim need an explicit command to halt the program. This is t
 
     halt
     
-This program doesn't do anything. While you can have multiple `halt` commands in a single MarieSim program, it's customary to have DONOTUSETHISWORD one `halt`.
+This program doesn't do anything. While you can have multiple `halt` commands in a single MarieSim program, it's customary to have one `halt`.
 
 ### Understanding `input` and `output`
 
@@ -78,9 +78,58 @@ This example inputs a number and immediately echos that number, then stops.
     output
     halt
 
+### Understanding `add` and `subt`
+
+`add` and `subt` will take the value at a particular location in memory and adds them to AC (`add`) or subtracts them from AC (`subt`). This sample code will add the value stored at location `two` to whatever the user inputs. As you can see from this program, we typically initialize our memory locations after the program.
+
+    input
+    add two
+    output
+    halt
+    two, dec 2
+
+This code does the same thing, but subtracts from input whatever value is stored at location `two`.
+
+    input
+    subt two
+    output
+    halt
+    two, dec 2
+
+### Understanding `load` and `store`
+
+`load` will load a value at a location into AC. `store` will move whatever is in AC to a memory location. This sample program will take a number, store it into location `first`, take a second number and store it into location `section`, take a third number and immediately output that number, then load the number in second and output, then load the number in first and then output it.
+
+    input
+    store first
+    input
+    store second
+    input
+    output
+    load second
+    output
+    load first
+    output
+    halt
+    first, dec 0
+    second, dec 0
+
+### Understanding `clear`
+
+`clear` is a quick way to write 0 to the AC register. That's all it does. This sample program displays 0 no matter what you type.
+
+    input
+    clear
+    output
+    halt
+
+### Understanding `jump`
+
+`jump` will jump to another line of code by changing the PC register to the value of a location (not the value at that location). This is useful for creating loops and if statements. See the next example.
+
 ### Understanding `skipcond`
 
-`skipcode` uses the first two bits of the parameter and performs one of the following actions. It's named `skipcond` because it will skip the next instruction based on a condition. This wording is confusing to me, so I've rewritten each instruction using a "run next if" description.
+`skipcode` uses the first two bits of the parameter and performs one of the following actions. It's named `skipcond` because it will skip the next instruction given a condition. This wording is confusing to me, so I've rewritten each instruction using a "run next if" description.
 
 | Bits | Original Description | My Description | Example |
 | --- | --- | --- | --- |
@@ -104,6 +153,14 @@ In this example, x is set to decimal 15 and y is set to decimal 20. This program
     stop, halt      // stop
     x, dec 15
     y, dec 20
+
+### Understanding `jumpi`, `storei`, and `loadi`.
+
+These instructions are known as the "indirect" instructions. These instructions don't work directly with an address, but instead work with an address store at a passed address.
+
+- `jumpi` will jump the PC register to an address stored in the passed memory address.
+- `loadi` will load value into AC found in the address taken in the passed memory address.
+- `storei` will store the value of AC into a memory address stored in the passed memory address.
 
 ### Understanding `jns`
 

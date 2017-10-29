@@ -1,0 +1,13 @@
+input
+store first
+input
+store second
+input
+output
+load second
+output
+load first
+output
+halt
+first, dec 0
+second, dec 0
