@@ -1,0 +1,6 @@
+input      // Input a value into AC
+store x    // Store AC into X
+add x      // Add x to AC
+output     // Output the value stored in AC
+halt       // Stop!
+x, dec 0

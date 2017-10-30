@@ -1,0 +1,31 @@
+loadi addr
+store sum
+output
+load addr
+add one
+store addr
+
+addi addr
+store sum
+output
+load addr
+add one
+store addr
+
+addi addr
+store sum
+output
+load addr
+add one
+store addr
+
+load sum
+output
+halt
+
+one, hex 1
+addr, hex 17
+list, dec 10
+dec 20
+dec 30
+sum, dec 0

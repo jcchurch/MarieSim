@@ -1,0 +1,26 @@
+input
+
+skipcond 000
+jump positiveorzero
+jump negative
+
+positiveorzero, skipcond 400
+jump positive
+jump zero
+
+positive, load asciip
+output
+jump stop
+
+negative, load asciin
+output
+jump stop
+
+zero, load asciiz
+output
+
+stop, halt
+
+asciip, dec 80
+asciin, dec 78
+asciiz, dec 48

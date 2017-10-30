@@ -1,0 +1,39 @@
+loop, input
+subt seventyeight
+
+skipcond 000
+jump subthirteen
+jump addthirteen
+aftercheck, add seventyeight
+
+output
+
+load count
+subt one
+store count
+skipcond 000
+jump loop
+
+halt
+
+subthirteen, subt thirteen
+jump aftercheck
+
+addthirteen, add thirteen
+jump aftercheck
+
+one, dec 1
+seventyeight, dec 78
+thirteen, dec 13
+count, dec 9
+address, hex 01F
+list, dec 0
+dec 0
+dec 0
+dec 0
+dec 0
+dec 0
+dec 0
+dec 0
+dec 0
+dec 0

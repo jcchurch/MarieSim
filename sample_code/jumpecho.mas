@@ -1,0 +1,13 @@
+// Echo Jump
+// This program is identical to our first program "Echo",
+// except that we needlessly jump around in the program using
+// the jump command. You can think of "jump" as a "go to".
+//
+// Filename: jumpecho.mas
+
+jump first
+second, output
+jump third
+first, input
+jump second
+third, halt

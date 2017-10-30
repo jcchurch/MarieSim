@@ -1,0 +1,15 @@
+input
+store a
+input
+store b
+
+load a
+add b
+store c
+
+output
+halt
+
+a, hex 0
+b, hex 0
+c, hex 0

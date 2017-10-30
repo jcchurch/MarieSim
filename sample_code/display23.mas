@@ -1,0 +1,4 @@
+load x     // Load the value stored at address x into AC
+output     // Output the value stored in AC
+halt       // Stop!
+x, dec 23  // Put 23 into a location named "x".
